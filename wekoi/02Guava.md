@@ -470,3 +470,270 @@ public void testRangeMap(){
     System.out.println(rangeMap.subRangeMap(Range.closed(5,15)));
 }
 ```
+## 3、缓存【Caches】
+- Guava Cache缓存的适用场景
+  - 用内存空间来提升速度
+    - 本地缓存
+  - 某些键会被查询一次以上
+  - 确保缓存中的数量总量适中，避免内存溢出（不会超出内存大小）
+- Guava Cache缓存的特性
+  - 自动加载缓存
+  - 缓存回收
+  - 缓存刷新
+  - 缓存预加载
+- Guava Cache常用方法
+  - get(K, Callable<V>)：获取缓存中指定键对应的值，如果键不存在，则使用Callable进行加载；
+  - getAllPresent(Iterable<K>)：获取缓存中指定键集合对应的值集合，如果键不存在，则对应的值为null；
+  - put(K, V)：向缓存中添加一个键值对；
+  - putAll(Map<? extends K, ? extends V>)：向缓存中添加一组键值对；
+  - invalidate(Object)：从缓存中移除指定的键值对；
+  - invalidateAll(Iterable<?>)：从缓存中移除指定的键值对集合；
+  - invalidateAll()：从缓存中移除所有的键值对；
+  - size()：返回缓存中键值对的数量；
+  - stats()：返回缓存的统计数据；
+  - asMap()：返回缓存中所有键值对的视图，返回类型为ConcurrentMap<K, V>；
+  - cleanUp()：清除缓存中的无效键值对。
+  - refresh(K)：刷新缓存中指定键对应的值，该方法是异步执行的，如果多个线程同时调用该方法，则只有一个线程会执行该方法，其他线程会等待执行结果。
+  - getIfPresent(K)：获取缓存中指定键对应的值，如果键不存在，则返回null。
+- 缓存清除策略
+  - expireAfterWrite 写缓存后多久过期 
+  - expireAfterAccess 读写缓存后多久过期 
+  - refreshAfterWrite 写入数据后多久过期,只阻塞当前数据加载线程,其他线程返回旧值
+
+```java
+/**
+ * TODO Guava Cache
+ */
+public class GuavaCacheService {
+
+    public void setCache() {
+        LoadingCache<Integer, String> cache = CacheBuilder.newBuilder()
+                //设置并发级别为8，并发级别是指可以同时写缓存的线程数
+                .concurrencyLevel(8)
+                //设置缓存容器的初始容量为10
+                .initialCapacity(10)
+                //设置缓存最大容量为100，超过100之后就会按照LRU最近虽少使用算法来移除缓存项
+                .maximumSize(100)
+                //是否需要统计缓存情况,该操作消耗一定的性能,生产环境应该去除
+                .recordStats()
+                //设置写缓存后n秒钟过期
+                .expireAfterWrite(60, TimeUnit.SECONDS)
+                //设置读写缓存后n秒钟过期,实际很少用到,类似于expireAfterWrite
+                //.expireAfterAccess(17, TimeUnit.SECONDS)
+                //只阻塞当前数据加载线程，其他线程返回旧值
+                //.refreshAfterWrite(13, TimeUnit.SECONDS)
+                //设置缓存的移除通知
+                .removalListener(notification -> {
+                    System.out.println(notification.getKey() + " " + notification.getValue() + " 被移除,原因:" + notification.getCause());
+                })
+                //build方法中可以指定CacheLoader，在缓存不存在时通过CacheLoader的实现自动加载缓存
+                .build(new DemoCacheLoader());
+
+        //模拟线程并发
+        new Thread(() -> {
+            //非线程安全的时间格式化工具
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
+            try {
+                for (int i = 0; i < 10; i++) {
+                    String value = cache.get(1);
+                    System.out.println(Thread.currentThread().getName() + " " + simpleDateFormat.format(new Date()) + " " + value);
+                    TimeUnit.SECONDS.sleep(3);
+                }
+            } catch (Exception ignored) {
+            }
+        }).start();
+
+        new Thread(() -> {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
+            try {
+                for (int i = 0; i < 10; i++) {
+                    String value = cache.get(1);
+                    System.out.println(Thread.currentThread().getName() + " " + simpleDateFormat.format(new Date()) + " " + value);
+                    TimeUnit.SECONDS.sleep(5);
+                }
+            } catch (Exception ignored) {
+            }
+        }).start();
+        //缓存状态查看
+        System.out.println(cache.stats().toString());
+
+    }
+
+    /**
+     * 随机缓存加载,实际使用时应实现业务的缓存加载逻辑,例如从数据库获取数据
+     */
+    public static class DemoCacheLoader extends CacheLoader<Integer, String> {
+        @Override
+        public String load(Integer key) throws Exception {
+            System.out.println(Thread.currentThread().getName() + " 加载数据开始");
+            TimeUnit.SECONDS.sleep(8);
+            Random random = new Random();
+            System.out.println(Thread.currentThread().getName() + " 加载数据结束");
+            CacheBuilder.newBuilder()
+                    // 设置并发级别为cpu核心数
+                    .concurrencyLevel(Runtime.getRuntime().availableProcessors())
+                    .build();
+
+            return "value:" + random.nextInt(10000);
+        }
+    }
+
+    /**
+     * 移除操作监听器
+     */
+    public void clearListener(){
+        RemovalListener<String, String> listener = notification -> System.out.println("[" + notification.getKey() + ":" + notification.getValue() + "] is removed!");
+        Cache<String,String> cache = CacheBuilder.newBuilder()
+                .maximumSize(5)
+                .removalListener(listener)
+                .build();
+    }
+}
+```
+## 4、并发【Concurrency】
+Guava使用ListenableFuture代替Future，ListenableFuture是Future的扩展，可以注册回调函数，当计算完成时会自动触发回调函数。
+- ListenableFuture的优点
+  - 异步执行
+  - 支持回调
+  - 支持链式调用
+- ListenableFuture的缺点
+  - 无法获取任务执行结果
+  - 无法控制任务执行起始时间
+  - 无法取消任务
+- ListenableFuture常见方法
+  - addListener(Runnable, Executor)：为ListenableFuture添加回调函数，当计算完成时会自动触发回调函数；
+  - get()：获取计算结果，如果计算没有完成，则会阻塞当前线程；
+  - get(long, TimeUnit)：获取计算结果，如果计算没有完成，则会阻塞当前线程，直到超时；
+  - isDone()：判断计算是否完成；
+  - isCancelled()：判断计算是否被取消；
+  - cancel(boolean)：取消计算，如果计算已经完成或者已经被取消，则返回false，否则返回true。
+  - transformAsync(Function<? super V, ListenableFuture<B>>, Executor)：将ListenableFuture的计算结果转换为另一个ListenableFuture；
+## 5、字符串处理【Strings】
+- Strings
+  - Strings.isNullOrEmpty(String)：判断字符串是否为空或者长度为0；
+  - Strings.nullToEmpty(String)：如果字符串为null，则转换为空字符串；
+  - Strings.emptyToNull(String)：如果字符串为空字符串，则转换为null；
+  - Strings.commonPrefix(CharSequence, CharSequence)：返回两个字符串的相同前缀；
+  - Strings.commonSuffix(CharSequence, CharSequence)：返回两个字符串的相同后缀；
+  - Strings.repeat(String, int)：重复字符串，第二个参数为重复的次数；
+  - Strings.padStart(String, int, char)：在字符串前面填充指定的字符，使得字符串长度达到指定长度；
+  - Strings.padEnd(String, int, char)：在字符串后面填充指定的字符，使得字符串长度达到指定长度；
+
+
+## 6、原生类型【Primitives】
+- Primitives
+  - Primitives.asList(T...)：将原生类型数组转换为对应的包装类型数组；
+  - Primitives.toByteArray(int)：将int转换为byte数组；
+  - Primitives.fromByteArray(byte[])：将byte数组转换为int；
+  - Primitives.join(数组, 分隔符)：将数组用分隔符连接成字符串；
+  - Primitives.asList(数组)：将数组转换为List；
+  - Primitives.toArray(Collection, 类型)：将集合转换为数组；
+  - Primitives.compare(原生类型, 原生类型)：比较两个原生类型的大小；
+  - Primitives.contains(原生类型[], 原生类型)：判断原生类型数组是否包含指定的原生类型；
+  - Primitives.indexOf(原生类型[], 原生类型)：返回原生类型在原生类型数组中的索引，如果不存在，则返回-1；
+  - Primitives.lastIndexOf(原生类型[], 原生类型)：返回原生类型在原生类型数组中的最后一个索引，如果不存在，则返回-1；
+  - Primitives.asList(原生类型[])：将原生类型数组转换为List；
+  - Primitives.toArray(Collection, 原生类型)：将集合转换为原生类型数组；
+  - Primitives.constrainToRange(原生类型, 原生类型, 原生类型)：将原生类型限制在指定的范围内；
+  - Primitives.saturatedCast(long)：将long转换为int，如果long值超出int的范围，则返回Integer.MAX_VALUE或Integer.MIN_VALUE；
+  - Primitives.checkedCast(long)：将long转换为int，如果long值超出int的范围，则抛出IllegalArgumentException异常；
+  - Primitives.compareUnsigned(原生类型, 原生类型)：比较两个无符号原生类型的大小；
+  - Primitives.divide(原生类型, 原生类型)：计算两个原生类型的商；
+  - Primitives.pow(原生类型, 原生类型)：计算原生类型的幂；
+## 7、排序【Ordering】
+- Ordering
+  - Ordering.natural()：对可排序类型做自然排序，如数字按大小，日期按先后排序；
+  - Ordering.usingToString()：按对象的字符串形式做字典排序[lexicographical ordering]；
+  - Ordering.from(Comparator)：把给定的Comparator转化为排序器；
+  - compound(Comparator)：合成另一个比较器，以处理当前排序器中的相等情况；
+  - reverse()：获取语义相反的排序器；
+  - nullsFirst()：使用当前排序器，但额外把null值排到最前面；
+  - nullsLast()：使用当前排序器，但额外把null值排到最后面；
+  - onResultOf(Function)：对集合中元素调用Function，再按返回值用当前排序器排序；
+  - lexicographical()：返回一个新的排序器，使用当前排序器，但比较的是两个可迭代对象的元素，按元素逐个比较，直到找到一个非零值，此时返回非零值，若到某个序列的结尾则视为长度更短的序列更小；
+  - isOrdered(Iterable)：判断可迭代对象是否已按排序器排序：允许有排序值相等的元素；
+  - isStrictlyOrdered(Iterable)：判断可迭代对象是否已严格按排序器排序：不允许排序值相等的元素；
+  - sortedCopy(Iterable)：判断可迭代对象是否已按排序器排序，如果已排序则返回该对象，否则抛出IllegalArgumentException异常；
+  - min(E, E)：返回两个参数中最小的那个。如果相等，则返回第一个参数；
+  - min(E, E, E, E...)：返回多个参数中最小的那个。如果有超过一个参数都最小，则返回第一个最小的参数；
+  - min(Iterable)：返回迭代器中最小的元素。如果可迭代
+
+## 8、事件总线【EventBus】
+- EventBus
+  - EventBus是Guava提供的一个事件发布-订阅模型的实现，主要用于组件之间的解耦。
+  - EventBus的使用
+    - 定义事件
+    - 定义事件监听器
+    - 注册事件监听器
+    - 发布事件
+  - EventBus的优点
+    - 事件发布者和事件监听器之间没有依赖关系，可以独立开发，解耦合；
+    - 事件的发布者不需要知道谁来处理该事件，事件的监听器也不需要知道事件何时产生；
+    - 事件的发布者和事件的监听器之间通过事件总线进行通信，事件总线是事件发布者和事件监听器的中介，事件发布者和事件监听器之间不会直接进行通信，降低了耦合度。
+  - EventBus的缺点
+    - 事件的发布者和事件的监听器之间没有直接关系，不容易定位问题；
+    - 事件的发布者和事件的监听器之间通过事件总线进行通信，事件总线是事件发布者和事件监听器的中介，增加了事件处理的复杂度。
+  - EventBus的使用场景
+    - 事件发布者和事件监听器之间没有依赖关系，可以独立开发，解耦合；
+    - 事件的发布者不需要知道谁来处理该事件，事件的监听器也不需要知道事件何时产生；
+    - 事件的发布者和事件的监听器之间通过事件总线进行通信，事件总线是事件发布者和事件监听器的中介，事件发布者和事件监听器之间不会直接进行通信，降低了耦合度。
+  - EventBus的缺点
+    - 事件的发布者和事件的监听器之间没有直接关系，不容易定位问题；
+    - 事件的发布者和事件的监听器之间通过事件总线进行通信，事件总线是事件发布者和
+
+## 9、数学运算【Math】
+- Math
+  - Math.max(int, int)：返回两个int值中较大的那个；
+  - Math.max(long, long)：返回两个long值中较大的那个；
+  - Math.max(float, float)：返回两个float值中较大的那个；
+  - Math.max(double, double)：返回两个double值中较大的那个；
+  - Math.min(int, int)：返回两个int值中较小的那个；
+  - Math.min(long, long)：返回两个long值中较小的那个；
+  - Math.min(float, float)：返回两个float值中较小的那个；
+  - Math.min(double, double)：返回两个double值中较小的那个；
+  - Math.sqrt(double)：返回double值的平方根；
+  - Math.pow(double, double)：返回第一个double值的第二个double值次方的值；
+  - Math.log(double)：返回double值的自然对数（底数为e）；
+  - Math.log10(double)：返回double值的以10为底的对数；
+  - Math.exp(double)：返回double值的e的次方的值；
+  - Math.abs(int)：返回int值的绝对值；
+  - Math.abs(long)：返回long值的绝对值；
+  - Math.abs(float)：返回float值的绝对值；
+  - Math.abs(double)：返回double值的绝对值；
+  - Math.ceil(double)：返回大于等于参数的最小的整数；
+  - Math.floor(double)：返回小于等于参数的最大的整数；
+  - Math.rint(double)：返回与参数最接近的整数。如果有两个整数与参数同样接近，则返回其中的偶数；
+  - Math.round(float)：返回与参数最接近的整数。如果有两个整数与参数同样接近，则返回其中的偶数；
+  - Math.round(double)：返回与参数最接近的整数。如果有两个整数与参数同样接近
+
+## 10、I/O
+- Files
+  - Files.exists(Path, LinkOption...)：判断文件是否存在；
+  - Files.createDirectory(Path, FileAttribute<?>...)：创建目录；
+  - Files.createDirectories(Path, FileAttribute<?>...)：创建目录，包括不存在的父目录；
+  - Files.createFile(Path, FileAttribute<?>...)：创建文件；
+  - Files.createTempDirectory(Path, String, FileAttribute<?>...)：创建临时目录；
+  - Files.createTempFile(Path, String, String, FileAttribute<?>...)：创建临时文件；
+  - Files.copy(Path, Path, CopyOption...)：复制文件或目录；
+    - copy(from,to)
+  - Files.move(Path, Path, CopyOption...)：移动文件或目录；
+    - move(from,to)
+  - Files.delete(Path)：删除文件或目录；
+  - Files.deleteIfExists(Path)：删除文件或目录，如果文件或目录不存在，则不抛出异常；
+  - Files.readAllBytes(Path)：读取文件的所有字节；
+  - Files.readAllLines(Path)：读取文件的所有行；
+  - Files.size(Path)：获取文件的大小；
+  - Files.getAttribute(Path, String, LinkOption...)：获取文件的属性；
+  - Files.setAttribute(Path, String, Object, LinkOption...)：设置文件的属性；
+  - Files.getFileStore(Path)：获取文件所在的文件系统；
+  - Files.isSymbolicLink(Path)：判断文件是否为符号链接；
+  - Files.isReadable(Path)：判断文件是否可读；
+  - Files.isWritable(Path)：判断文件是否可写；
+  - Files.isExecutable(Path)：判断文件是否可执行；
+  - Files.isHidden(Path)：判断文件是否隐藏；
+  - Files.probeContentType(Path)：获取文件的MIME类型；
+  - Files.walk(Path, FileVisitOption...)：遍历目录及其子目录；
+  - Files.walkFileTree(Path, FileVisitor<? super Path>)：遍历目录及其子目录，可以自定义遍历规则；
+  - Files.lines(Path)：读取文件的所有行，返回类型为Stream<String>；
+  - Files.lines(Path, Charset)：读取文件的所有行，返回类型为Stream<String>；
+  - Files.newBufferedReader(Path)：
