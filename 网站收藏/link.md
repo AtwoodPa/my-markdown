@@ -12,5 +12,12 @@
   - https://xiaolincoding.com/
 - 互联网 Java 工程师进阶知识完全扫盲
   - https://doocs.github.io/advanced-java/#/
-- 代码随想录
-  - https://programmercarl.com/
+- 算法
+  - 剑指offer
+    - https://www.nowcoder.com/exam/oj/ta?page=1&tpId=13&type=13
+  - 代码随想录
+    - https://programmercarl.com/
+  - LeetCode
+    - https://leetcode.cn/problemset/algorithms/
+  - 牛客网
+    - https://www.nowcoder.com/exam/oj
