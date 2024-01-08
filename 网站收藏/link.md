@@ -1,0 +1,16 @@
+# 网站收藏
+- cs-node
+  - https://github.com/CyC2018/CS-Notes
+- java-guide
+  - all
+    - https://github.com/Snailclimb/JavaGuide
+  - interview
+    - https://github.com/Snailclimb/JavaGuide-Interview
+- JavaFamily
+  - https://github.com/AobingJava/JavaFamily
+- 小林Coding
+  - https://xiaolincoding.com/
+- 互联网 Java 工程师进阶知识完全扫盲
+  - https://doocs.github.io/advanced-java/#/
+- 代码随想录
+  - https://programmercarl.com/
