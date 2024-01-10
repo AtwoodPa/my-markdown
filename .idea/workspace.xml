@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="486af7fa-578b-4d1b-a86e-4ff6491f6c26" name="Changes" comment="图解计算机网络 - HTTP基本概念">
+      <change beforePath="$PROJECT_DIR$/计算机基础/network/图解计算机网络.md" beforeDir="false" afterPath="$PROJECT_DIR$/计算机基础/network/图解计算机网络.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2aZ0algeCGxUAVTvgnaSwCDkqoi" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/wekoi/images" />
+      <recent name="$PROJECT_DIR$/数据库" />
+      <recent name="$PROJECT_DIR$/java" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="486af7fa-578b-4d1b-a86e-4ff6491f6c26" name="Changes" comment="" />
+      <created>1704510859655</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1704510859655</updated>
+      <workItem from="1704510861115" duration="9476000" />
+      <workItem from="1704534492170" duration="590000" />
+      <workItem from="1704697229464" duration="9253000" />
+      <workItem from="1704722477934" duration="10000" />
+      <workItem from="1704765333447" duration="2691000" />
+      <workItem from="1704790269315" duration="2006000" />
+    </task>
+    <task id="LOCAL-00001" summary="网站收藏">
+      <option name="closed" value="true" />
+      <created>1704701089556</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704701089556</updated>
+    </task>
+    <task id="LOCAL-00002" summary="图解计算机网络">
+      <option name="closed" value="true" />
+      <created>1704710188985</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704710188985</updated>
+    </task>
+    <task id="LOCAL-00003" summary="图解计算机网络 - HTTP基本概念">
+      <option name="closed" value="true" />
+      <created>1704711304785</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704711304785</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="网站收藏" />
+    <MESSAGE value="图解计算机网络" />
+    <MESSAGE value="图解计算机网络 - HTTP基本概念" />
+    <option name="LAST_COMMIT_MESSAGE" value="图解计算机网络 - HTTP基本概念" />
+  </component>
+</project>
