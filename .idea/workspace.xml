@@ -5,6 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="486af7fa-578b-4d1b-a86e-4ff6491f6c26" name="Changes" comment="图解计算机网络 - HTTP基本概念">
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wekoi/设计/社区.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/数据库/images/types.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/数据库/非关系型/redis/图解redis.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/计算机基础/network/图解计算机网络.md" beforeDir="false" afterPath="$PROJECT_DIR$/计算机基础/network/图解计算机网络.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +51,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Library/PP/data/md/my-markdown/2024/work&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -41,7 +61,11 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/2024/work" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/数据库/images" />
       <recent name="$PROJECT_DIR$/wekoi/images" />
       <recent name="$PROJECT_DIR$/数据库" />
       <recent name="$PROJECT_DIR$/java" />
@@ -61,6 +85,10 @@
       <workItem from="1704722477934" duration="10000" />
       <workItem from="1704765333447" duration="2691000" />
       <workItem from="1704790269315" duration="2006000" />
+      <workItem from="1704890843157" duration="1057000" />
+      <workItem from="1704893536074" duration="1142000" />
+      <workItem from="1704895941769" duration="6626000" />
+      <workItem from="1704982561828" duration="311000" />
     </task>
     <task id="LOCAL-00001" summary="网站收藏">
       <option name="closed" value="true" />
