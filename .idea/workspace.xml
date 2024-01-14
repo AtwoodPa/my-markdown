@@ -4,27 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="486af7fa-578b-4d1b-a86e-4ff6491f6c26" name="Changes" comment="图解计算机网络 - HTTP基本概念">
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/img_9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wekoi/设计/社区.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/数据库/images/types.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/数据库/非关系型/redis/图解redis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/计算机基础/network/图解计算机网络.md" beforeDir="false" afterPath="$PROJECT_DIR$/计算机基础/network/图解计算机网络.md" afterDir="false" />
+    <list default="true" id="486af7fa-578b-4d1b-a86e-4ff6491f6c26" name="Changes" comment="Enhancement：wekoi">
+      <change afterPath="$PROJECT_DIR$/wekoi/后端工程师.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +69,10 @@
       <workItem from="1704890843157" duration="1057000" />
       <workItem from="1704893536074" duration="1142000" />
       <workItem from="1704895941769" duration="6626000" />
-      <workItem from="1704982561828" duration="311000" />
+      <workItem from="1704982561828" duration="1264000" />
+      <workItem from="1705111059547" duration="6721000" />
+      <workItem from="1705135336712" duration="73000" />
+      <workItem from="1705204136647" duration="260000" />
     </task>
     <task id="LOCAL-00001" summary="网站收藏">
       <option name="closed" value="true" />
@@ -114,7 +98,23 @@
       <option name="project" value="LOCAL" />
       <updated>1704711304785</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Enhancement：分布式原理">
+      <option name="closed" value="true" />
+      <created>1705124422445</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705124422445</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Enhancement：wekoi">
+      <option name="closed" value="true" />
+      <created>1705204549273</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705204549273</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +124,8 @@
     <MESSAGE value="网站收藏" />
     <MESSAGE value="图解计算机网络" />
     <MESSAGE value="图解计算机网络 - HTTP基本概念" />
-    <option name="LAST_COMMIT_MESSAGE" value="图解计算机网络 - HTTP基本概念" />
+    <MESSAGE value="Enhancement：分布式原理" />
+    <MESSAGE value="Enhancement：wekoi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enhancement：wekoi" />
   </component>
 </project>
