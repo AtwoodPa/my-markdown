@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="486af7fa-578b-4d1b-a86e-4ff6491f6c26" name="Changes" comment="Enhancement：wekoi">
-      <change afterPath="$PROJECT_DIR$/wekoi/后端工程师.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/网站收藏/link.md" beforeDir="false" afterPath="$PROJECT_DIR$/网站收藏/link.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +39,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -51,6 +53,13 @@
       <recent name="$PROJECT_DIR$/数据库" />
       <recent name="$PROJECT_DIR$/java" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -73,6 +82,8 @@
       <workItem from="1705111059547" duration="6721000" />
       <workItem from="1705135336712" duration="73000" />
       <workItem from="1705204136647" duration="260000" />
+      <workItem from="1705408185843" duration="22000" />
+      <workItem from="1705408214685" duration="1449000" />
     </task>
     <task id="LOCAL-00001" summary="网站收藏">
       <option name="closed" value="true" />
