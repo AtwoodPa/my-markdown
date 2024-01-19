@@ -1,0 +1,6 @@
+- 一元机场
+  - https://sub1.smallstrawberry.com/api/v1/client/subscribe?token=e9d48c9924ea62fcc0d6abac9ad80ed4
+- 30包年
+  - https://www.yfjc.xyz/api/v1/client/subscribe?token=6e92770ecd89c07b9baa9ccc23cd8d5f
+- ClashX
+  - https://github.com/MetaCubeX/ClashX.Meta/releases
