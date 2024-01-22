@@ -28,4 +28,7 @@
 - sa-token
   - Spring Boot整合实现权限控制
     - https://blog.csdn.net/weixin_43827693/article/details/129547298
+- CS自学
+  - https://github.com/izackwu/TeachYourselfCS-CN/blob/master/TeachYourselfCS-CN.md
+- 
 
