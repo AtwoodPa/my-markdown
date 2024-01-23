@@ -30,5 +30,6 @@
     - https://blog.csdn.net/weixin_43827693/article/details/129547298
 - CS自学
   - https://github.com/izackwu/TeachYourselfCS-CN/blob/master/TeachYourselfCS-CN.md
-- 
+- 开发框架
+  - https://github.com/AntonyCheng/spring-boot-init-template
 
