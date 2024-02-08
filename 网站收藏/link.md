@@ -25,11 +25,20 @@
     - https://gitcode.net/KnowledgePlanet/road-map
     - https://bugstack.cn/md/road-map/road-map.html#%E4%BA%8C%E3%80%81%E7%AE%80%E6%98%8E-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF
     - https://gaga.plus/
+  - LeetCode大全
+    - https://doocs.gitee.io/leetcode/
+    - https://github.com/doocs/leetcode?tab=readme-ov-file
 - sa-token
   - Spring Boot整合实现权限控制
     - https://blog.csdn.net/weixin_43827693/article/details/129547298
 - CS自学
   - https://github.com/izackwu/TeachYourselfCS-CN/blob/master/TeachYourselfCS-CN.md
+  - 
 - 开发框架
   - https://github.com/AntonyCheng/spring-boot-init-template
+- 面试
+  - 牛客网
+    - https://www.nowcoder.com/discuss/353153934367858688
+    - 牛客模版速刷
+      - https://www.nowcoder.com/discuss/353159448875180032
 
