@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="486af7fa-578b-4d1b-a86e-4ff6491f6c26" name="Changes" comment="Enhancement：wekoi">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-end development/javaScript-png/JavaScript.xmind" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot/Spring Boot3核心技术与最佳实践.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +42,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Library/PP/data/md/my-markdown&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Library/PP/data/md/my-markdown/Front-end development/javaScript-png&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -53,6 +54,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Front-end development/javaScript-png" />
+      <recent name="$PROJECT_DIR$/Front-end development" />
       <recent name="$PROJECT_DIR$/2024/work" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -107,6 +110,7 @@
       <workItem from="1706839625304" duration="2050000" />
       <workItem from="1707039064664" duration="2000" />
       <workItem from="1707376824586" duration="429000" />
+      <workItem from="1709986650517" duration="3621000" />
     </task>
     <task id="LOCAL-00001" summary="网站收藏">
       <option name="closed" value="true" />
