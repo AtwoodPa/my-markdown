@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="486af7fa-578b-4d1b-a86e-4ff6491f6c26" name="Changes" comment="Enhancement：wekoi">
-      <change afterPath="$PROJECT_DIR$/Front-end development/javaScript-png/JavaScript.xmind" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springboot/Spring Boot3核心技术与最佳实践.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-project/校园墙参考.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024/work/春招.md" beforeDir="false" afterPath="$PROJECT_DIR$/2024/work/春招.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2024/work/简历_苏盼盼_Java开发工程师_2.doc" beforeDir="false" afterPath="$PROJECT_DIR$/2024/work/简历_苏盼盼_Java开发工程师_2.doc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +111,12 @@
       <workItem from="1706839625304" duration="2050000" />
       <workItem from="1707039064664" duration="2000" />
       <workItem from="1707376824586" duration="429000" />
-      <workItem from="1709986650517" duration="3621000" />
+      <workItem from="1709986650517" duration="3796000" />
+      <workItem from="1710130992146" duration="751000" />
+      <workItem from="1710168544635" duration="886000" />
+      <workItem from="1710169648901" duration="677000" />
+      <workItem from="1710237183838" duration="380000" />
+      <workItem from="1710397504138" duration="648000" />
     </task>
     <task id="LOCAL-00001" summary="网站收藏">
       <option name="closed" value="true" />
