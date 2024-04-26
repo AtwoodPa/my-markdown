@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="486af7fa-578b-4d1b-a86e-4ff6491f6c26" name="Changes" comment="Enhancement：wekoi">
-      <change afterPath="$PROJECT_DIR$/my-project/校园墙参考.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2024/work/春招.md" beforeDir="false" afterPath="$PROJECT_DIR$/2024/work/春招.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2024/work/简历_苏盼盼_Java开发工程师_2.doc" beforeDir="false" afterPath="$PROJECT_DIR$/2024/work/简历_苏盼盼_Java开发工程师_2.doc" afterDir="false" />
-    </list>
+    <list default="true" id="486af7fa-578b-4d1b-a86e-4ff6491f6c26" name="Changes" comment="Enhancement：wekoi" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,24 +31,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.demo01.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Library/PP/data/md/my-markdown/Front-end development/javaScript-png&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.demo01.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Library/PP/data/md/my-markdown/Front-end development/javaScript-png",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.fileTypes",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Front-end development/javaScript-png" />
@@ -117,6 +113,8 @@
       <workItem from="1710169648901" duration="677000" />
       <workItem from="1710237183838" duration="380000" />
       <workItem from="1710397504138" duration="648000" />
+      <workItem from="1710422220743" duration="724000" />
+      <workItem from="1710472367835" duration="380000" />
     </task>
     <task id="LOCAL-00001" summary="网站收藏">
       <option name="closed" value="true" />
@@ -182,5 +180,9 @@
     <MESSAGE value="Enhancement：分布式原理" />
     <MESSAGE value="Enhancement：wekoi" />
     <option name="LAST_COMMIT_MESSAGE" value="Enhancement：wekoi" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
